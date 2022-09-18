@@ -3,6 +3,9 @@ from redis import Redis
 from rq import Queue
 from rq.registry import StartedJobRegistry
 
+import django
+django.setup()
+
 from count_words import count_words_at_url
 
 # Tell RQ what Redis connection to use

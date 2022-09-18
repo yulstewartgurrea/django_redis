@@ -30,8 +30,6 @@ def upload_csv(request):
 
         # reader = csv.DictReader(decoded_file)
 
-        print(count_words_at_url('https://heroku.com'))
-
         for i, r in enumerate(reader):
             try:
                 a = 'test'

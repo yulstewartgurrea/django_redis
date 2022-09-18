@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '//root/projects/python_2/django_redis/cad/')
+
 import time
 from redis import Redis
 from rq import Queue

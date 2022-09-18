@@ -1,0 +1,59 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-12 mx-auto text-justify">
+					<div class="header-title">
+						<h1 class="wv-heading--title">
+							CAD estimate script to upload csv and look up database by manufacturer and part details.
+						</h1>
+						<h2 class="wv-heading--subtitle">
+							Directions
+						</h2>
+						<ol>
+							<li>Upload csv file.</li>
+							<li>Once you have chosen a file. Click the submit button.</li>
+							<li>Please run the script for bachs of 1000 rows</li>
+							<li>Once loading is done, a file will automatically be downloaded.</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12 mx-auto">
+					<h2>
+						Form
+					</h2>
+					<form method="post" enctype="multipart/form-data" action="{% url 'cad:cad_upload_csv' %}">
+						{%csrf_token%}
+						<table class="table">
+							<thead class="thead-dark">
+							  <tr>
+								<th scope="col">Input's Description</th>
+								<th scope="col">Input</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<th scope="row">Choose CSV File</th>
+								<td><input type="file" name="csv_file" class="form-control-file" id="exampleFormControlFile1"></td>
+							  </tr>
+							</tbody>
+						</table>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+				</div>	
+			</div>
+			
+
+      </div>
+    </body>
+</html>
